@@ -1,2 +1,3 @@
 #casinowalk
-jjyhfjh
+print('welcome to casino walk')
+print()
