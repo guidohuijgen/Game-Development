@@ -11,6 +11,8 @@ shop = play.new_image("shop.png", size = 25, transparency= 0)
 shop.x = 350
 shop.y = 260
 
+shop_achtergrond = play.new_image("shopachtergrond.png", size =150, transparency=0)
+
 start_box = play.new_box(color = 'red',width=250, height=85)
 
 start_button = play.new_text('START',color ='white',y= -8, font_size=70) 
@@ -42,7 +44,7 @@ def achteruit_function():
 @play.when_key_pressed("d","right") 
 def rechts_function():
     player.x = player.x +6
-    
+
 @player.when_clicked
 def draai_function():
     @play.when_key_pressed("a", "left")
@@ -57,6 +59,15 @@ def draai_function():
     @play.when_key_pressed("w","up")
     def loop_naarvoren_function():
         player.angle = 0
+
+@shop.when_clicked
+def shop_open_function():
+    achtergrond.transparency = 0
+    player.transparency = 0
+    reset_button.transparency = 0
+    money_button.transparency = 0
+    shop.transparency = 0
+    shop_achtergrond.transparency = 100
 
 @start_box.when_clicked
 def start_function():
