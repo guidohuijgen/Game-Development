@@ -1,9 +1,9 @@
 #casinowalk
 import play
-
+# Moeten boxes worden
 # achtergrond = play.new_image("achtergrond.png",size = 120, transparency=0)
 
-# beginscherm = play.new_image("download.png", size= 310, transparency=100)
+beginscherm = play.new_box (color = "light blue", width= 800, height = 1000, transparency=100)
 
 player = play.new_image("player.png", size = 30, transparency=0)
 
@@ -11,6 +11,7 @@ shop = play.new_image("shop.png", size = 25, transparency= 0)
 shop.x = 350
 shop.y = 260
 
+# IPV Image moet dit een box worden!!!
 # shop_achtergrond = play.new_image("shopachtergrond.png", size =150, transparency=0)
 
 pijltje_terug = play.new_image("pijl.png", size = 20, transparency=0)
