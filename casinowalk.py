@@ -24,7 +24,11 @@ coin.x = 240
 
 start_box = play.new_box(color = 'red',width=250, height=85)
 
-start_button = play.new_text('START',color ='white',y= -8, font_size=70) 
+start_button = play.new_text('START',color ='white',y= -8, font_size=70)
+
+welcoming_text = play.new_text('Welcome to Casino Walk!', color = 'black', y = 52, font_size = 20)
+
+press_start_to_start_text = play.new_text('Press start to start the game!', color = 'black', y= -55, font_size = 20)
 
 reset_button = play.new_text('RESET',color = 'black', font_size = 20)
 reset_button.x = 270
@@ -54,6 +58,8 @@ def start_function():
     coin.transparency = 100
     player.y = 0
     player.x = 0
+    welcoming_text.transparency = 0
+    press_start_to_start_text.transparency = 0
 
 @reset_button.when_clicked
 def reset_function():
@@ -66,6 +72,8 @@ def reset_function():
     shop.transparency = 0
     player.transparency = 0
     coin.transparency = 0
+    welcoming_text.transparency = 100
+    press_start_to_start_text.transparency = 100
     
 @play.when_key_pressed("w","up")
 def vooruit_function():
