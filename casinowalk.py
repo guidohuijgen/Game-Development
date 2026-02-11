@@ -5,22 +5,17 @@ achtergrond = play.new_box(color = "dark red", width = 800, height = 800, transp
 
 beginscherm = play.new_box (color = "light blue", width= 800, height = 1000)
 
+roullette = play.new_image("roullette.png", size  = 100, x = -300, y = -200)
+
 player = play.new_image("player.png", size = 30, transparency=0)
 
-shop = play.new_image("shop.png", size = 25, transparency= 0)
-shop.x = 350
-shop.y = 260
-
+shop = play.new_image("shop.png", size = 25, transparency= 0, x = 350, y = 260)
 
 shop_achtergrond = play.new_box(color = "light blue", width = 800,height = 800, transparency=0)
 
-pijltje_terug = play.new_image("pijl.png", size = 20, transparency=0)
-pijltje_terug.x = 350
-pijltje_terug.y = 260
+pijltje_terug = play.new_image("pijl.png", size = 20, transparency=0, x = 350, y = 260)
 
-coin = play.new_image("munt.png", size = 10, transparency = 0)
-coin.y = 244
-coin.x = 235
+coin = play.new_image("munt.png", size = 10, transparency = 0, y = 244, x = 235)
 
 start_box = play.new_box(color = 'red',width=250, height=85)
 
@@ -30,15 +25,11 @@ welcoming_text = play.new_text('Welcome to Casino Walk!', color = 'black', y = 5
 
 press_start_to_start_text = play.new_text('Press start to start the game!', color = 'black', y= -55, font_size = 20)
 
-reset_button = play.new_text('RESET',color = 'black', font_size = 20)
-reset_button.x = 270
-reset_button.y = 270
+reset_button = play.new_text('RESET',color = 'black', font_size = 20, x = 270, y = 270)
 reset_button.hide()
 
 money = 20
-money_button = play.new_text (f'{money} ', color = 'black', font_size = 25)
-money_button.x=270
-money_button.y=240
+money_button = play.new_text (f'{money} ', color = 'black', font_size = 25, x = 270, y = 240)
 money_button.hide()
 
 if money <= 0:
