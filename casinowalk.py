@@ -1,9 +1,9 @@
 #casinowalk
 import play
 # Moeten boxes worden
-# achtergrond = play.new_image("achtergrond.png",size = 120, transparency=0)
+achtergrond = play.new_box(color = "light red", width = 300, height = 200, transparency=0)
 
-beginscherm = play.new_box (color = "light blue", width= 800, height = 1000, transparency=100)
+beginscherm = play.new_box (color = "light blue", width= 800, height = 1000)
 
 player = play.new_image("player.png", size = 30, transparency=0)
 
@@ -49,10 +49,10 @@ if money <= 0:
 def start_function():
     start_button.hide()
     start_box.hide()
-    # achtergrond.transparency = 100
+    achtergrond.transparency = 100
     money_button.show()
     reset_button.show()
-    # beginscherm.transparency = 0
+    beginscherm.transparency = 0
     shop.transparency = 100
     player.transparency = 100
     coin.transparency = 100
@@ -67,8 +67,8 @@ def reset_function():
     start_box.show()
     reset_button.hide()
     money_button.hide()
-    # beginscherm.transparency =100
-    # achtergrond.transparency = 0
+    beginscherm.transparency = 100
+    achtergrond.transparency = 0
     shop.transparency = 0
     player.transparency = 0
     coin.transparency = 0
