@@ -1,7 +1,7 @@
 #casinowalk
 import play
-# Moeten boxes worden
-achtergrond = play.new_box(color = "light red", width = 300, height = 200, transparency=0)
+
+achtergrond = play.new_box(color = "dark red", width = 800, height = 800, transparency=0)
 
 beginscherm = play.new_box (color = "light blue", width= 800, height = 1000)
 
@@ -11,8 +11,8 @@ shop = play.new_image("shop.png", size = 25, transparency= 0)
 shop.x = 350
 shop.y = 260
 
-# IPV Image moet dit een box worden!!!
-# shop_achtergrond = play.new_image("shopachtergrond.png", size =150, transparency=0)
+
+shop_achtergrond = play.new_box(color = "light blue", width = 800,height = 800, transparency=0)
 
 pijltje_terug = play.new_image("pijl.png", size = 20, transparency=0)
 pijltje_terug.x = 350
@@ -20,7 +20,7 @@ pijltje_terug.y = 260
 
 coin = play.new_image("munt.png", size = 10, transparency = 0)
 coin.y = 244
-coin.x = 240
+coin.x = 235
 
 start_box = play.new_box(color = 'red',width=250, height=85)
 
@@ -105,23 +105,23 @@ def draai_function():
 
 @shop.when_clicked
 def shop_open_function():
-    # achtergrond.transparency = 0
+    achtergrond.transparency = 0
     player.transparency = 0
     reset_button.transparency = 0
     money_button.transparency = 0
     shop.transparency = 0
-    # shop_achtergrond.transparency = 100
+    shop_achtergrond.transparency = 100
     pijltje_terug.transparency = 100
     coin.transparency = 0
 
 @pijltje_terug.when_clicked
 def shop_sluiten_function():
-    # achtergrond.transparency = 100
+    achtergrond.transparency = 100
     player.transparency = 100
     reset_button.transparency =100
     money_button.transparency = 100
     shop.transparency = 100
-    # shop_achtergrond.transparency = 0
+    shop_achtergrond.transparency = 0
     pijltje_terug.transparency = 0
     coin.transparency = 100
 
