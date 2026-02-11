@@ -25,13 +25,13 @@ start_box = play.new_box(color = 'red',width=250, height=85)
 
 start_button = play.new_text('START',color ='white',y= -8, font_size=70) 
 
-reset_button = play.new_text('RESET',color = 'white', font_size = 20)
+reset_button = play.new_text('RESET',color = 'black', font_size = 20)
 reset_button.x = 270
 reset_button.y = 270
 reset_button.hide()
 
 money = 20
-money_button = play.new_text (f'{money} ', color = 'white', font_size = 25)
+money_button = play.new_text (f'{money} ', color = 'black', font_size = 25)
 money_button.x=270
 money_button.y=240
 money_button.hide()
