@@ -125,5 +125,17 @@ def shop_sluiten_function():
     pijltje_terug.transparency = 0
     coin.transparency = 100
 
+@play.repeat_forever
+def doorloop_function():
+    if player.x > 415:
+        player.x = -415
+    if player.x < -415:
+        player.x = 415
+    if player.y > 315:
+        player.y = -315
+    if player.y < -315:
+        player.y = 315
+
+
 play.start_program()
 
