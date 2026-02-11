@@ -1,9 +1,9 @@
 #casinowalk
 import play
 
-achtergrond = play.new_image("achtergrond.png",size = 120, transparency=0)
+# achtergrond = play.new_image("achtergrond.png",size = 120, transparency=0)
 
-beginscherm = play.new_image("download.png", size= 300, transparency=100)
+# beginscherm = play.new_image("download.png", size= 310, transparency=100)
 
 player = play.new_image("player.png", size = 30, transparency=0)
 
@@ -11,7 +11,15 @@ shop = play.new_image("shop.png", size = 25, transparency= 0)
 shop.x = 350
 shop.y = 260
 
-shop_achtergrond = play.new_image("shopachtergrond.png", size =150, transparency=0)
+# shop_achtergrond = play.new_image("shopachtergrond.png", size =150, transparency=0)
+
+pijltje_terug = play.new_image("pijl.png", size = 20, transparency=0)
+pijltje_terug.x = 350
+pijltje_terug.y = 260
+
+coin = play.new_image("munt.png", size = 10, transparency = 0)
+coin.y = 244
+coin.x = 240
 
 start_box = play.new_box(color = 'red',width=250, height=85)
 
@@ -23,7 +31,7 @@ reset_button.y = 270
 reset_button.hide()
 
 money = 20
-money_button = play.new_text (f'€{money} ', color = 'white', font_size = 20)
+money_button = play.new_text (f'{money} ', color = 'white', font_size = 25)
 money_button.x=270
 money_button.y=240
 money_button.hide()
@@ -32,6 +40,32 @@ if money <= 0:
     game_over = play.new_text("Je bent blut...", color = "red",font_size = 60)
     play.stop_program
 
+@start_box.when_clicked
+def start_function():
+    start_button.hide()
+    start_box.hide()
+    # achtergrond.transparency = 100
+    money_button.show()
+    reset_button.show()
+    # beginscherm.transparency = 0
+    shop.transparency = 100
+    player.transparency = 100
+    coin.transparency = 100
+    player.y = 0
+    player.x = 0
+
+@reset_button.when_clicked
+def reset_function():
+    start_button.show()
+    start_box.show()
+    reset_button.hide()
+    money_button.hide()
+    # beginscherm.transparency =100
+    # achtergrond.transparency = 0
+    shop.transparency = 0
+    player.transparency = 0
+    coin.transparency = 0
+    
 @play.when_key_pressed("w","up")
 def vooruit_function():
     player.y = player.y + 6
@@ -62,34 +96,25 @@ def draai_function():
 
 @shop.when_clicked
 def shop_open_function():
-    achtergrond.transparency = 0
+    # achtergrond.transparency = 0
     player.transparency = 0
     reset_button.transparency = 0
     money_button.transparency = 0
     shop.transparency = 0
-    shop_achtergrond.transparency = 100
+    # shop_achtergrond.transparency = 100
+    pijltje_terug.transparency = 100
+    coin.transparency = 0
 
-@start_box.when_clicked
-def start_function():
-    start_button.hide()
-    start_box.hide()
-    achtergrond.transparency = 100
-    money_button.show()
-    reset_button.show()
-    beginscherm.transparency = 0
-    shop.transparency = 100
+@pijltje_terug.when_clicked
+def shop_sluiten_function():
+    # achtergrond.transparency = 100
     player.transparency = 100
-   
-@reset_button.when_clicked
-def reset_function():
-    start_button.show()
-    start_box.show()
-    reset_button.hide()
-    money_button.hide()
-    beginscherm.transparency =100
-    achtergrond.transparency = 0
-    shop.transparency = 0
-    player.transparency = 0
-    
+    reset_button.transparency =100
+    money_button.transparency = 100
+    shop.transparency = 100
+    # shop_achtergrond.transparency = 0
+    pijltje_terug.transparency = 0
+    coin.transparency = 100
+
 play.start_program()
 
