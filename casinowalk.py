@@ -28,7 +28,7 @@ start_button = play.new_text('START',color ='white',y= -8, font_size=70)
 
 welcoming_text = play.new_text('Welcome to Casino Walk!', color = 'black', y = 52, font_size = 20)
 
-press_start_to_start_text = play.new_text('Press start to start the game!', color = 'black', y= -55, font_size = 20)
+press_start_to_start_text = play.new_text('Press start to start the game', color = 'black', y= -55, font_size = 20)
 
 reset_button = play.new_text('RESET',color = 'black', font_size = 20)
 reset_button.x = 270
@@ -93,15 +93,27 @@ def draai_function():
     @play.when_key_pressed("a", "left")
     def loop_links_function():
         player.angle = 90
+    @play.when_key_pressed("w" and "a", "up" and "left")
+    def loop_schuin_links_boven_function():
+        player.angle = 45
     @play.when_key_pressed("s","down")
     def loop_naarbeneden_function():
         player.angle = 180
+    @play.when_key_pressed("a" and "s", "down" and "left")
+    def loop_schuin_links_onder_function():
+        player.angle = 135
     @play.when_key_pressed("d","right")
     def loop_rechts_function():
         player.angle = 270
+    @play.when_key_pressed("s" and "d", "down" and "right")
+    def loop_schuin_rechts_onder_function():
+        player.angle = 225
     @play.when_key_pressed("w","up")
     def loop_naarvoren_function():
         player.angle = 0
+    @play.when_key_pressed("w" and "d", "up" and "right")
+    def loop_schuin_rechts_boven_function():
+        player.angle = 315
 
 @shop.when_clicked
 def shop_open_function():
@@ -113,6 +125,7 @@ def shop_open_function():
     shop_achtergrond.transparency = 100
     pijltje_terug.transparency = 100
     coin.transparency = 0
+    shop_text = play_new_text('This is the shop! Here you can level up by buying new outfits for your character!' , color = 'black', font_size = 10)
 
 @pijltje_terug.when_clicked
 def shop_sluiten_function():
@@ -135,6 +148,8 @@ def doorloop_function():
         player.y = -315
     if player.y < -315:
         player.y = 315
+
+
 
 
 play.start_program()
